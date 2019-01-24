@@ -1,6 +1,6 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {TestBed, async} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -31,5 +31,14 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to MonProjet-UnitTests!');
+  });
+
+  it(`should return 10 when adding 5 and 5`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    const a = 5;
+    const b = 5;
+    const expected = 10;
+    expect(app.adding(a, b)).toEqual(expected);
   });
 });
